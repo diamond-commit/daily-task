@@ -1,4 +1,5 @@
 
+import os 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import parse_qs
 from pathlib import Path
@@ -62,8 +63,10 @@ class DailyTrackHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
 
-server = HTTPServer(("localhost", 8000), DailyTrackHandler)
+port = int(os.environ.get("PORT", 10000))
 
-print("DailyTrack is running at http://localhost:8000")
+server = HTTPServer(("0.0.0.0", port), DailyTrackHandler)
+
+print(f"DailyTrack is running on port {port}")
 
 server.serve_forever()
