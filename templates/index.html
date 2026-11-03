@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DailyTrack</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+    <main class="max-w-xl mx-auto px-5 py-16">
+
+        <header class="mb-10">
+            <h1 class="text-3xl font-bold">
+                DailyTrack<span class="text-indigo-500">.</span>
+            </h1>
+
+            <p class="text-slate-400 mt-2">
+                Stay focused. Get things done.
+            </p>
+        </header>
+
+        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+            <h2 class="text-xl font-semibold mb-5">
+                Add a task
+            </h2>
+
+            <form action="/" method="POST" class="flex gap-3">
+
+                <input
+                    type="text"
+                    name="task"
+                    placeholder="What needs to get done?"
+                    required
+                    class="flex-1 min-w-0 bg-slate-800 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+
+                <button
+                    type="submit"
+                    class="bg-indigo-600 hover:bg-indigo-500 px-5 rounded-xl font-semibold">
+                    Add
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="mt-10">
+
+            <h2 class="text-lg font-semibold mb-5">
+                Your tasks
+            </h2>
+
+            <ul>
+                {{ tasks }}
+            </ul>
+
+        </section>
+
+        <footer class="text-center text-slate-600 text-sm mt-12">
+            Built with Python · DailyTrack
+        </footer>
+
+    </main>
+
+</body>
+</html>
